@@ -4,9 +4,9 @@ MAINTAINER cutech <cody@c-u-tech.com>
 RUN useradd -u 1000 mumble \
  && apt-get update \
  && apt-get install -y mumble-server wget screen unzip \
- && mkdir -p /murmur/data /murmur/config \
- && wget -P /murmur "https://www.gametracker.com/downloads/gtmurmur/1.2.0-bin.zip" \
- && unzip -d /murmur/1.2.0-bin.zip 
+ && mkdir -p /murmur/data /murmur/config
+ RUN wget -P /murmur "https://www.gametracker.com/downloads/gtmurmur/1.2.0-bin.zip"
+ RUN unzip -d /murmur/1.2.0-bin.zip  
 
 ADD mumble-server.ini /murmur/config/mumble-server.ini
 
