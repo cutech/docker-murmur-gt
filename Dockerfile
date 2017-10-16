@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM debian:stretch
 MAINTAINER Òscar Casajuana <elboletaire@underave.net>
 
 RUN useradd -u 1000 mumble \
