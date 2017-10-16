@@ -3,7 +3,7 @@ MAINTAINER cutech <cody@c-u-tech.com>
 
 RUN useradd -u 1000 mumble \
  && apt-get update \
- && apt-get install -y mumble-server \
+ && apt-get install -y mumble-server wget unzip screen \
  && mkdir -p /murmur/data /murmur/config \
  && wget -j -P /murmur "https://www.gametracker.com/downloads/gtmurmur/1.2.0-bin.zip" \
  && unzip /murmur/1.2.0-bin.zip -d /murmur \
