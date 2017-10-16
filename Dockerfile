@@ -6,11 +6,11 @@ RUN useradd -u 1000 mumble \
  && apt-get install -y mumble-server wget unzip screen \
  && mkdir -p /murmur/data /murmur/config \
  && wget -P /murmur "https://www.gametracker.com/downloads/gtmurmur/1.2.0-bin.zip" \
- && unzip -j /murmur/1.2.0-bin.zip -d /murmur \
- && chmod +x /murmur/gtmurmur-static
+ && unzip /murmur/1.2.0-bin.zip -d /murmur \
+ && chmod +x /murmur/1.2.0/gtmurmur-static
 
 ADD mumble-server.ini /murmur/config/mumble-server.ini
-ADD mumble-server.ini /murmur/murmur.ini
+ADD mumble-server.ini /murmur/1.2.0/murmur.ini
 
 RUN chown -R 1000:1000 /murmur
 
