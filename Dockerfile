@@ -6,7 +6,7 @@ RUN useradd -u 1000 mumble \
  && apt-get install -y mumble-server wget screen unzip \
  && mkdir -p /murmur/data /murmur/config
  RUN wget -P /murmur "https://www.gametracker.com/downloads/gtmurmur/1.2.0-bin.zip" \
- && unzip /murmur/1.2.0-bin.zip -d /murmur  
+ && unzip /murmur/1.2.0-bin.zip -d /murmur
 
 ADD mumble-server.ini /murmur/config/mumble-server.ini
 
@@ -22,3 +22,4 @@ EXPOSE 27800/udp
 
 USER mumble
 
+ENTRYPOINT screen -d -m bash -c "/murmur/1.2.0/gtmurmur-static /murmur/config/mumble-server.ini"
