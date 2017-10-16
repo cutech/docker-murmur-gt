@@ -22,4 +22,3 @@ EXPOSE 27800/udp
 
 USER mumble
 
-ENTRYPOINT ["screen", "-d", "-m", "bash", "-c", "/murmur/1.2.0/gtmurmur-static", "/murmur/config/mumble-server.ini"]
