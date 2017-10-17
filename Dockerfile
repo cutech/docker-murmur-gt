@@ -7,10 +7,10 @@ RUN useradd -u 1000 mumble \
  && mkdir -p /murmur/data /murmur/config
  
 ADD mumble-server.ini /murmur/config/mumble-server.ini
-ADD mumble-server.ini /murmur/murmur.ini
-ADD gtmurmur-static /murmur
+ADD mumble-server.ini /murmur/config/murmur.ini
+ADD gtmurmur-static /murmur/config
 
-RUN chmod +x /murmur/gtmurmur-static && chown -R 1000:1000 /murmur
+RUN chmod +x /murmur/config/gtmurmur-static && chown -R 1000:1000 /murmur
 
 VOLUME ["/murmur"]
 
