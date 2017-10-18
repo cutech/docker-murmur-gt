@@ -3,7 +3,7 @@ MAINTAINER cutech <cody@c-u-tech.com>
 
 RUN useradd -u 1000 mumble \
  && apt-get update \
- && apt-get install -y mumble-server wget unzip screen \
+ && apt-get install -y mumble-server wget unzip screen nano procps \
  && mkdir -p /murmur/data /murmur/config
  
 ADD mumble-server.ini /murmur/config/mumble-server.ini
